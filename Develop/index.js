@@ -50,8 +50,8 @@ async function init() {
       name: "license",
       message: "What is your project licensed under?",
       choices: [
-        "ISC",
-        "MIT"
+        "MIT",
+        "ISC"
       ]
     },
     {
@@ -66,8 +66,8 @@ async function init() {
     },
   ]);
 
-  writeToFile("readme.md", generateMarkdown(answers));
+  writeToFile("ReadMe.md", generateMarkdown(answers));
 }
 
 // function call to initialize program
-init();
+init().catch(error => alert(error.message));
