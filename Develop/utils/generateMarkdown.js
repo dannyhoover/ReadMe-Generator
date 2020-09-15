@@ -1,7 +1,8 @@
-const licenseChoice1 = "![MIT License](https://img.shields.io/badge/license-MIT-brightgreen)";
-const licenseChoice2 = "![ISC License](https://img.shields.io/badge/license-ISC-blue)";
+function getLicense (data) {
+  const licenseChoice1 = "![MIT License](https://img.shields.io/badge/license-MIT-brightgreen)";
+  const licenseChoice2 = "![ISC License](https://img.shields.io/badge/license-ISC-blue)";
 
-const licenseExp1 = `
+  const licenseExp1 = `
 MIT License
 
 Copyright(c)[2020][Danny Hoover]
@@ -25,7 +26,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 `
 
-const licenseExp2 = `
+  const licenseExp2 = `
 ISC License
 
 Copyright (c) 2020, Danny Hoover
@@ -40,21 +41,22 @@ IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CON
 ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, 
 NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 `
-function getLicense (data) {
+
   if (data.license === "MIT") {
-    let licenseShield = licenseChoice1;
-    let licenseExplain = licenseExp1;
+    licenseShield = licenseChoice1
+    licenseExplain = licenseExp1
+  } else {
+      licenseShield = licenseChoice2
+      licenseExplain = licenseExp2
   }
-  else {
-    let licenseShield = licenseChoice2;
-    let licenseExplain = licenseExp2;
-  }
+  return licenseShield, licenseExplain;
 }
 
 // function to generate markdown for README
 function generateMarkdown(data) {
-  getLicense();
-  return `${data.licenseShield}
+  getLicense(data);
+  return `${licenseShield}
+
 # ${data.title}
 
 ## Description
@@ -74,12 +76,14 @@ ${data.tests}
 
 ## Licensing
 ${licenseShield}
+
 ${data.license}
+
 ${licenseExplain}
 
 ### Further Questions? Contact Me:
-${data.githubUsername}
-${data.email}
+My github username is ${data.githubUsername}
+My email is ${data.email}
 `;
 }
 

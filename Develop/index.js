@@ -70,4 +70,4 @@ async function init() {
 }
 
 // function call to initialize program
-init();
+init().catch(err => { console.log(err) });
