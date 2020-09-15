@@ -3,7 +3,7 @@ function getLicense (data) {
   const licenseChoice2 = "![ISC License](https://img.shields.io/badge/license-ISC-blue)";
 
   const licenseExp1 = `
-MIT License
+MIT License:
 
 Copyright(c)[2020][Danny Hoover]
 
@@ -27,7 +27,7 @@ SOFTWARE.
 `
 
   const licenseExp2 = `
-ISC License
+ISC License:
 
 Copyright (c) 2020, Danny Hoover
 
@@ -92,8 +92,8 @@ ${licenseExplain}
 
 ### Further Questions?
 Contact Me:
-My github username is ${data.githubUsername}
-My email is ${data.email}
+My github username is ${data.githubUsername} and
+my email is ${data.email}
 `;
 }
 
