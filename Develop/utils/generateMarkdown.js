@@ -59,6 +59,15 @@ function generateMarkdown(data) {
 
 # ${data.title}
 
+## Table of Contents:
+- [Description](##-Description)
+- [Installation](##-Installation)
+- [Usage](##-Usage)
+- [Contribution](##-Contribution)
+- [Testing](##-Testing)
+- [Licensing](##-Licensing)
+- [Contact Info](###-Further-Questions?)
+
 ## Description
 ${data.description}
 
@@ -81,7 +90,8 @@ ${data.license}
 
 ${licenseExplain}
 
-### Further Questions? Contact Me:
+### Further Questions?
+Contact Me:
 My github username is ${data.githubUsername}
 My email is ${data.email}
 `;
